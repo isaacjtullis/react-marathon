@@ -6,11 +6,13 @@ class SongCollection extends React.Component {
     super(props)
   }
   render() {
-    let songs = this.props.songs.map(song =>{
+    let songs = this.props.songs.map((song) => {
+      let handleSongSelect = () => this.props.handleSongSelect(song.id)
+
       let songBeingPlayed = "unselected"
-        if (this.props.selectedSongId === song.id) {
-          songBeingPlayed = "selected"
-        }
+      if (this.props.selectedSongId === song.id) {
+        songBeingPlayed = "selected"
+      }
 
       return(
         <Song
@@ -19,7 +21,7 @@ class SongCollection extends React.Component {
             name = {song.name}
             artist = {song.artist}
             album = {song.album}
-
+            handleSongSelect = {handleSongSelect}
         />
       )
     })
