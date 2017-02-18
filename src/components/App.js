@@ -23,7 +23,7 @@ class App extends React.Component {
         <div className="row">
           <div class="large-6 columns">
             <h1>Playlists</h1>
-            <PlaylistCollection playlists={data.playlists} />
+            <PlaylistCollection playlists={data.playlists} selectedPlaylistId={data.selectedPlaylistId}/>
             <SongCollection songs={selectedPlaylistSongs} selectedSongId={data.selectedSongId}/>
           </div>
           <div class="large-6 columns"></div>
