@@ -9,7 +9,6 @@ const SongCollection = (props) => {
     if (props.selectedSongId === song.id) {
       songBeingPlayed = "selected"
     }
-
     return(
       <Song
           songBeingPlayed = {songBeingPlayed}

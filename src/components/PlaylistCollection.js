@@ -9,7 +9,6 @@ const PlaylistCollection = (props) => {
     if (props.selectedPlaylistId === playlist.id) {
       selectedPlaylist = "selected"
     }
-
     return (
       <Playlist
         playlistBeingPlayed = {selectedPlaylist}
@@ -20,7 +19,6 @@ const PlaylistCollection = (props) => {
       />
     )
   })
-
   return (
     <ul>{playlists}</ul>
   );
