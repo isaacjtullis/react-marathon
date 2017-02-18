@@ -8,6 +8,8 @@ class PlaylistCollection extends React.Component {
 
   render() {
     let playlists = this.props.playlists.map(playlist=>{
+      let handlePlaylistSelected = () => this.props.handlePlaylistSelected(playlist.id)
+
       let selectedPlaylist = "unselected"
       if (this.props.selectedPlaylistId === playlist.id) {
         selectedPlaylist = "selected"
@@ -15,10 +17,11 @@ class PlaylistCollection extends React.Component {
 
       return (
         <Playlist
-          playlistBeingPlayed = {selectedPlaylist} 
+          playlistBeingPlayed = {selectedPlaylist}
           key = {playlist.id}
           name = {playlist.name}
           song = {playlist.song}
+          handlePlaylistSelected = {handlePlaylistSelected}
         />
       )
     })
