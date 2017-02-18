@@ -7,12 +7,19 @@ class SongCollection extends React.Component {
   }
   render() {
     let songs = this.props.songs.map(song =>{
+      let songBeingPlayed = "unselected"
+        if (this.props.selectedSongId === song.id) {
+          songBeingPlayed = "selected"
+        }
+
       return(
         <Song
-          key = {song.id}
-          name = {song.name}
-          artist = {song.artist}
-          album = {song.album}
+            songBeingPlayed = {songBeingPlayed}
+            key = {song.id}
+            name = {song.name}
+            artist = {song.artist}
+            album = {song.album}
+
         />
       )
     })
