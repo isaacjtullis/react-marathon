@@ -5,6 +5,15 @@ import SongCollection from './SongCollection';
 class App extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      songSelected: this.props.data.selectedPlaylistId
+    }
+    this.handleSongSelect = this.handleSongSelect.bind(this)
+  }
+  handleSongSelect(id){
+    debugger
+    let newSelectedSong = id
+    this.setState({songSelected: newSelectedSong})
   }
 
   render() {
@@ -24,7 +33,7 @@ class App extends React.Component {
           <div class="large-6 columns">
             <h1>Playlists</h1>
             <PlaylistCollection playlists={data.playlists} selectedPlaylistId={data.selectedPlaylistId}/>
-            <SongCollection songs={selectedPlaylistSongs} selectedSongId={data.selectedSongId}/>
+            <SongCollection handleSongSelect={this.handleSongSelect} songs={selectedPlaylistSongs} selectedSongId={this.state.songSelected}/>
           </div>
           <div class="large-6 columns"></div>
         </div>

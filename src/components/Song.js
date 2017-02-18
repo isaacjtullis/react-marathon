@@ -7,7 +7,7 @@ class Song extends React.Component {
   render () {
     return (
       <div className={this.props.songBeingPlayed}>
-        <li>{this.props.name}</li>
+        <li onClick={this.props.handleSongSelect}>{this.props.name}</li>
       </div>
     );
   };
