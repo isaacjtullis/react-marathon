@@ -6,7 +6,9 @@ class Song extends React.Component {
   }
   render () {
     return (
-      <li>{this.props.name}</li>
+      <div className={this.props.songBeingPlayed}>
+        <li>{this.props.name}</li>
+      </div>
     );
   };
 }
