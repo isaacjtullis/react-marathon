@@ -6,7 +6,9 @@ class Playlist extends React.Component {
   }
   render () {
     return (
-      <li>{this.props.name}</li>
+      <div className={this.props.playlistBeingPlayed}>
+        <li>{this.props.name}</li>
+      </div>
     );
   }
 }
